@@ -1,5 +1,5 @@
 use vercel_runtime::{run, Body, Error, Request, Response, StatusCode};
-use cola_auth::{respond, astra_db_config};
+use serde_json::json;
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -7,7 +7,5 @@ async fn main() -> Result<(), Error> {
 }
 
 pub async fn handler(_req: Request) -> Result<Response<Body>, Error> {
-    let test = astra_db_config();
-    println!("{:?}", test);
-    respond(StatusCode::OK)
+    Ok(Response::builder().status(StatusCode::OK).header("Content-Type", "application/json").body(json!({}).to_string().into())?)
 }
