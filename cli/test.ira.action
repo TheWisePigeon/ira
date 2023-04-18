@@ -1,0 +1,7 @@
+[ACTION]
+name = "My first basic action"
+os = "linux"
+requires = ["@ira/setup-git-basic"]
+action = [
+    "echo 'Hello from my first basic action'"
+]
