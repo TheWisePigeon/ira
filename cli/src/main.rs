@@ -1,6 +1,7 @@
 pub mod ira;
 
 use std::env::args;
+use ira::{ parse_config_file};
 
 fn main()->() {
     let arg1 = args().nth(1);
@@ -15,6 +16,7 @@ fn main()->() {
                     match arg2 {
                         Some(conf_file_path)=>{
                             println!("{conf_file_path}");
+                            let _ = parse_config_file(conf_file_path);
                         },
                         None=>{
                             println!("config file path missing. Run `ira help` to learn how to use ira");
