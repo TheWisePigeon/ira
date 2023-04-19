@@ -2,7 +2,8 @@ pub struct Action {
     pub name: String,
     pub os: String,
     pub requires: Vec<String>,
-    pub commands: Vec<String>
+    pub commands: Vec<String>,
+    pub skip_command: String
 }
 
 pub struct Step {
